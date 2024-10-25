@@ -9,15 +9,15 @@ public class CafeKiosk {
 
     private final List<Beverage> beverages = new ArrayList<>();
 
-    void add(Beverage beverage) {
+    public void add(Beverage beverage) {
         beverages.add(beverage);
     }
 
-    void remove(Beverage beverage) {
+    public void remove(Beverage beverage) {
         beverages.remove(beverage);
     }
 
-    void clear() {
+    public void clear() {
         beverages.clear();
     }
 }
