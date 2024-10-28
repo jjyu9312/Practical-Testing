@@ -1,4 +1,4 @@
-package com.kkw.cafekiosk;
+package com.kkw.cafekiosk.spring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
