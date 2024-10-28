@@ -23,9 +23,10 @@
 hs_err_pid*
 replay_pid*
 
-# gradle
-.gradle/*
-.idea/*
-gradle/*
-gradlew
-gradlew.bat
+# idea files
+.idea/
+
+# Gradle files
+.gradle/
+
+/build
