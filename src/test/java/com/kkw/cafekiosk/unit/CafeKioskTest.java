@@ -1,13 +1,10 @@
-package com.kkw.cafekiosk;
+package com.kkw.cafekiosk.unit;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import com.kkw.cafekiosk.unit.Americano;
-import com.kkw.cafekiosk.unit.CafeKiosk;
-import com.kkw.cafekiosk.unit.Latte;
 import org.junit.jupiter.api.Test;
 
-public class AmericanoTest {
+public class CafeKioskTest {
 
     @Test
     void test() {
@@ -16,12 +13,19 @@ public class AmericanoTest {
 
     @Test
     void add() {
-        Americano americano = new Americano();
-        assertThat(americano.getName()).isEqualTo("아메리카노");
-
         CafeKiosk cafeKiosk = new CafeKiosk();
-        cafeKiosk.add(americano, 1);
+        cafeKiosk.add(new Americano());
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(1);
+    }
+
+    @Test
+    void addSeveralBeverages() {
+        CafeKiosk cafeKiosk = new CafeKiosk();
+        Americano am = new Americano();
+        cafeKiosk.add(am, 2);
+
+        assertThat(cafeKiosk.getBeverages().get(0)).isEqualTo(am);
+        assertThat(cafeKiosk.getBeverages().get(1)).isEqualTo(am);
     }
 
     @Test
