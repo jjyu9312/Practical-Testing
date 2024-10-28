@@ -20,7 +20,7 @@ public class AmericanoTest {
         assertThat(americano.getName()).isEqualTo("아메리카노");
 
         CafeKiosk cafeKiosk = new CafeKiosk();
-        cafeKiosk.add(americano);
+        cafeKiosk.add(americano, 1);
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(1);
     }
 
@@ -30,7 +30,7 @@ public class AmericanoTest {
         assertThat(americano.getPrice()).isEqualTo(4000);
 
         CafeKiosk cafeKiosk = new CafeKiosk();
-        cafeKiosk.add(americano);
+        cafeKiosk.add(americano, 1);
 
         cafeKiosk.remove(americano);
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(0);
@@ -45,8 +45,8 @@ public class AmericanoTest {
         assertThat(latte.getPrice()).isEqualTo(5000);
 
         CafeKiosk cafeKiosk = new CafeKiosk();
-        cafeKiosk.add(americano);
-        cafeKiosk.add(latte);
+        cafeKiosk.add(americano, 1);
+        cafeKiosk.add(latte, 1);
 
         cafeKiosk.clear();
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(0);
