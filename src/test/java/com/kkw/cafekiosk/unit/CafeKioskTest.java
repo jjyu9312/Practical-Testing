@@ -1,7 +1,6 @@
 package com.kkw.cafekiosk.unit;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 import com.kkw.cafekiosk.unit.order.Order;
 import java.time.LocalDateTime;
@@ -76,7 +75,7 @@ public class CafeKioskTest {
         cafeKiosk.add(new Americano());
         cafeKiosk.add(new Latte());
 
-        Order order = cafeKiosk.createOrder(LocalDateTime.of(2023,1, 17, 10, 0));
+        Order order = cafeKiosk.createOrder(LocalDateTime.of(2023, 1, 17, 10, 0));
         assertThat(order.getBeverages()).hasSize(1);
         assertThat(order.getBeverages().get(0).getName()).isEqualTo("아메리카노");
     }
@@ -87,9 +86,9 @@ public class CafeKioskTest {
         cafeKiosk.add(new Americano());
         cafeKiosk.add(new Latte());
 
-        assertThatThrownBy(() -> cafeKiosk.createOrder(LocalDateTime.of(2023,1, 17, 9, 59)))
-            .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage("주문 시간이 아닙니다. 관리자에게 문의하세요.");
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            cafeKiosk.createOrder(LocalDateTime.of(2023, 1, 17, 9, 59));
+        });
     }
 
     @Test
@@ -98,7 +97,7 @@ public class CafeKioskTest {
         cafeKiosk.add(new Americano());
         cafeKiosk.add(new Latte());
 
-        assertThatThrownBy(() -> cafeKiosk.createOrder(LocalDateTime.of(2023,1, 17, 22, 59)))
+        assertThatThrownBy(() -> cafeKiosk.createOrder(LocalDateTime.of(2023, 1, 17, 22, 59)))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("주문 시간이 아닙니다. 관리자에게 문의하세요.");
     }
