@@ -13,6 +13,7 @@ public class CafeKiosk {
     private static final LocalTime SHOP_OPEN_TIME = LocalTime.of(10, 0);
     private static final LocalTime SHOP_CLOSE_TIME = LocalTime.of(22, 0);
 
+    // 전역 변수로 음료 리스트를 선언
     private final List<Beverage> beverages = new ArrayList<>();
 
     // 단순 add 함수
