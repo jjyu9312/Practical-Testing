@@ -23,11 +23,11 @@ public class CafeKioskTest {
     @Test
     void addSeveralBeverages() {
         CafeKiosk cafeKiosk = new CafeKiosk();
-        Americano am = new Americano();
-        cafeKiosk.add(am, 2);
+        Americano ame = new Americano();
+        cafeKiosk.add(ame, 2);
 
-        assertThat(cafeKiosk.getBeverages().get(0)).isEqualTo(am);
-        assertThat(cafeKiosk.getBeverages().get(1)).isEqualTo(am);
+        assertThat(cafeKiosk.getBeverages().get(0)).isEqualTo(ame);
+        assertThat(cafeKiosk.getBeverages().get(1)).isEqualTo(ame);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CafeKioskTest {
         cafeKiosk.add(new Latte());
 
         Order order = cafeKiosk.createOrder();
-        assertThat(order.getBeverages()).hasSize(1);
+        assertThat(order.getBeverages()).hasSize(2);
         assertThat(order.getBeverages().get(0).getName()).isEqualTo("아메리카노");
     }
 
