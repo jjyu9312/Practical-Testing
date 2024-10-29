@@ -18,6 +18,8 @@ public class CafeKioskRunner {
         System.out.println(">>> 총 가격: " + totalPrice);
 
         Order order = cafeKiosk.createOrder(LocalDateTime.now());
+
+        System.out.println(">>> 주문 시각: " + order.getOrderDateTime());
     }
 
 }
