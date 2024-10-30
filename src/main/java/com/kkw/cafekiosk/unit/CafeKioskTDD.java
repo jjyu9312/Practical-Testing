@@ -22,9 +22,10 @@ public class CafeKioskTDD {
         // red : 실패할 테스트로 코드를 작성
         // int red = 0;
 
-        // green : 성공할 정도로 아주 작게 작성
+        // green : 테스트를 성공할 정도로 아주 작게 코드를 작성
         // int green = 8500;
 
+        // refactoring : 실제 로직으로 리팩토링
         int totalPrice = beverages.stream()
             .mapToInt(Beverage::getPrice)
             .sum();
