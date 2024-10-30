@@ -61,6 +61,7 @@ public class CafeKiosk {
             .sum();
     }
 
+    // 현재 시간을 기준으로 주문을 생성하는 기능
     public Order createOrder() {
         LocalDateTime currentDateTime = LocalDateTime.now();
         LocalTime currentTime = currentDateTime.toLocalTime();
