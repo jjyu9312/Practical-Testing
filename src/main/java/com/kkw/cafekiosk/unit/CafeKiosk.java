@@ -63,25 +63,25 @@ public class CafeKiosk {
 
     // 현재 시간을 기준으로 주문을 생성하는 기능
     public Order createOrder() {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        LocalTime currentTime = currentDateTime.toLocalTime();
+        LocalDateTime nowDateTime = LocalDateTime.now();
+        LocalTime now = nowDateTime.toLocalTime();
 
-        if (currentTime.isBefore(SHOP_OPEN_TIME) || currentTime.isAfter(SHOP_CLOSE_TIME)) {
+        if (now.isBefore(SHOP_OPEN_TIME) || now.isAfter(SHOP_CLOSE_TIME)) {
             throw new IllegalStateException("주문 시간이 아닙니다. 관리자에게 문의하세요.");
         }
 
-        return new Order(currentDateTime, beverages);
+        return new Order(nowDateTime, beverages);
     }
 
     // createOrder 함수 오버로딩
     // 특정 시간을 받아서 주문을 생성하는 기능
-    public Order createOrder(LocalDateTime currentDateTime) {
-        LocalTime currentTime = currentDateTime.toLocalTime();
+    public Order createOrder(LocalDateTime orderDateTime) {
+        LocalTime currentTime = orderDateTime.toLocalTime();
 
         if (currentTime.isBefore(SHOP_OPEN_TIME) || currentTime.isAfter(SHOP_CLOSE_TIME)) {
             throw new IllegalStateException("주문 시간이 아닙니다. 관리자에게 문의하세요.");
         }
 
-        return new Order(currentDateTime, beverages);
+        return new Order(orderDateTime, beverages);
     }
 }
