@@ -26,7 +26,8 @@ public class CafeKioskTDD {
         // int green = 8500;
 
         // refactoring : 실제 로직으로 리팩토링
-        int totalPrice = beverages.stream()
+        int totalPrice;
+        totalPrice = beverages.stream()
             .mapToInt(Beverage::getPrice)
             .sum();
 
