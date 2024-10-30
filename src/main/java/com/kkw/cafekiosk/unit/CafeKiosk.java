@@ -76,9 +76,9 @@ public class CafeKiosk {
     // createOrder 함수 오버로딩
     // 특정 시간을 받아서 주문을 생성하는 기능
     public Order createOrder(LocalDateTime orderDateTime) {
-        LocalTime currentTime = orderDateTime.toLocalTime();
+        LocalTime orderTime = orderDateTime.toLocalTime();
 
-        if (currentTime.isBefore(SHOP_OPEN_TIME) || currentTime.isAfter(SHOP_CLOSE_TIME)) {
+        if (orderTime.isBefore(SHOP_OPEN_TIME) || orderTime.isAfter(SHOP_CLOSE_TIME)) {
             throw new IllegalStateException("주문 시간이 아닙니다. 관리자에게 문의하세요.");
         }
 
