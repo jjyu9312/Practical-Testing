@@ -9,6 +9,6 @@ public class Latte implements Beverage {
 
     @Override
     public int getPrice() {
-        return 5000;
+        return 4500;
     }
 }

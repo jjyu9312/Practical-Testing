@@ -23,8 +23,12 @@ public class CafeKioskTDD {
         // int red = 0;
 
         // green : 성공할 정도로 아주 작게 작성
-        int green = 8500;
+        // int green = 8500;
 
-        return green;
+        int totalPrice = beverages.stream()
+            .mapToInt(Beverage::getPrice)
+            .sum();
+
+        return totalPrice;
     }
 }
