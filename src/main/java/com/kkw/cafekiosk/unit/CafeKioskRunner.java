@@ -14,12 +14,12 @@ public class CafeKioskRunner {
         cafeKiosk.add(new Latte());
         System.out.println(">>> 라떼 추가");
 
+        Order order = cafeKiosk.createOrder(LocalDateTime.now());
+        System.out.println(">>> 음료 주문 시각: " + order.getOrderDateTime());
+
         int totalPrice = cafeKiosk.calculateTotalPrice();
         System.out.println(">>> 총 가격: " + totalPrice);
 
-        Order order = cafeKiosk.createOrder(LocalDateTime.now());
-
-        System.out.println(">>> 주문 시각: " + order.getOrderDateTime());
     }
 
 }
