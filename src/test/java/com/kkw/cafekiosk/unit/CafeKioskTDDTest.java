@@ -15,7 +15,7 @@ public class CafeKioskTDDTest {
         cafeKiosk.add(new Americano());
         cafeKiosk.add(new Latte());
 
-        int totalPrice = cafeKiosk.calculateTotalPriceTDD();
+        int totalPrice = cafeKiosk.calculateTotalPrice();
 
         assertThat(totalPrice).isEqualTo(8500);
     }

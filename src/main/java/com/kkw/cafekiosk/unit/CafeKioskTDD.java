@@ -18,7 +18,7 @@ public class CafeKioskTDD {
         beverages.add(beverage);
     }
 
-    public int calculateTotalPriceTDD() {
+    public int calculateTotalPrice() {
         // red : 실패할 테스트로 코드를 작성
         // int result = 0;
 
