@@ -10,11 +10,13 @@ import org.junit.jupiter.api.Test;
 public class CafeKioskTest {
 
     @Test
+    @DisplayName("테스트가 잘 동작하는지 확인합니다.")
     void test() {
         System.out.println("test");
     }
 
     @Test
+    @DisplayName("주문에 하나의 음료를 담을 수 있습니다.")
     void add() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano());
@@ -22,6 +24,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("한 종류의 음료를 여러 잔 담을 수 있습니다.")
     void addSeveralBeverages() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano ame = new Americano();
@@ -32,6 +35,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문에서 음료를 하나 또는 여러 잔 뺄 수 있습니다.")
     void remove() {
         Americano americano = new Americano();
         assertThat(americano.getPrice()).isEqualTo(4000);
@@ -44,12 +48,13 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문을 초기화할 수 있습니다.")
     void clear() {
         Americano americano = new Americano();
         assertThat(americano.getPrice()).isEqualTo(4000);
 
         Latte latte = new Latte();
-        assertThat(latte.getPrice()).isEqualTo(5000);
+        assertThat(latte.getPrice()).isEqualTo(4500);
 
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(americano, 1);
