@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import com.kkw.cafekiosk.unit.order.Order;
 import java.time.LocalDateTime;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CafeKioskTest {
@@ -59,6 +60,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문을 생성할 수 있습니다.")
     void createOrder() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano());
@@ -70,6 +72,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문 시각 내에는 주문을 생성할 수 있습니다.")
     void createOrderWithCurrentDateTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano());
@@ -84,6 +87,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("카페 오픈 시간 이전에는 주문을 생성할 수 없습니다.")
     void createOrderOutsideOpenTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano());
@@ -96,6 +100,7 @@ public class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("카페 종료 시간 이후에는 주문을 생성할 수 없습니다.")
     void createOrderOutsideCloseTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano());
