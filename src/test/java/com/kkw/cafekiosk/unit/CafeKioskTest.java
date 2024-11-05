@@ -10,16 +10,28 @@ import org.junit.jupiter.api.Test;
 public class CafeKioskTest {
 
     @Test
-    @DisplayName("테스트가 잘 동작하는지 확인합니다.")
+    @DisplayName("")
     void test() {
-        System.out.println("test");
+        // given
+        String test = "test";
+
+        // when
+        System.out.println(test);
+
+        // then
+        assertThat(test).isEqualTo("test");
     }
 
     @Test
     @DisplayName("주문에 하나의 음료를 담을 수 있습니다.")
     void add() {
+        // given
         CafeKiosk cafeKiosk = new CafeKiosk();
+
+        // when
         cafeKiosk.add(new Americano());
+
+        // then
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(1);
     }
 
