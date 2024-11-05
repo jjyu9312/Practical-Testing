@@ -48,7 +48,7 @@ public class CafeKioskTest {
     }
 
     @Test
-    @DisplayName("주문을 초기화할 수 있습니다.")
+    @DisplayName("주문을 한번에 초기화할 수 있습니다.")
     void clear() {
         Americano americano = new Americano();
         assertThat(americano.getPrice()).isEqualTo(4000);
