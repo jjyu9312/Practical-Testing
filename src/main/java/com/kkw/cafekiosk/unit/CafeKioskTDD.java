@@ -16,14 +16,15 @@ public class CafeKioskTDD {
     }
 
     public int calculateTotalPrice() {
+        int result;
+
         // red : 실패할 테스트로 코드를 작성
-        // int result = 0;
+        // result = 0;
 
         // green : 테스트를 성공할 정도로 아주 작게 코드를 작성
-        // int result = 8500;
+        // result = 8500;
 
         // refactoring : 실제 로직으로 리팩토링
-        int result;
         result = beverages.stream()
             .mapToInt(Beverage::getPrice)
             .sum();
