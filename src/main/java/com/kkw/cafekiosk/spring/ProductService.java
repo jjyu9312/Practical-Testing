@@ -5,7 +5,9 @@ import com.kkw.cafekiosk.spring.domain.ProductRepository;
 import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductService {
 
     private final ProductRepository productRepository;
