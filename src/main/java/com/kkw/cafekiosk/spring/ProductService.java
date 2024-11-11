@@ -16,12 +16,16 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<ProductsRes> findAllByProductSellingStatusIn(List<ProductSellingStatus> productSellingStatusList) {
+    public List<ProductsRes> findAllByProductSellingStatusIn(
+        List<ProductSellingStatus> productSellingStatusList) {
 
-        List<Product> products = productRepository.findAllByProductSellingStatusIn(productSellingStatusList);
+        List<Product> products = productRepository.findAllByProductSellingStatusIn(
+            productSellingStatusList);
 
         return products.stream()
-            .map(product -> new ProductsRes(product.getId(), product.getProductNumber(), product.getName(), product.getPrice(), product.getProductSellingStatus(), product.getProductType()))
+            .map(product -> new ProductsRes(product.getId(), product.getProductNumber(),
+                product.getName(), product.getPrice(), product.getProductSellingStatus(),
+                product.getProductType()))
             .collect(Collectors.toList());
     }
 }
