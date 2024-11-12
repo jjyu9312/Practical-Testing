@@ -30,7 +30,7 @@ class CafeKioskApplicationTests {
 
         // given
         Product product1 = Product.builder()
-            .productNumber(1)
+            .productNumber("001")
             .name("아메리카노")
             .price(4000)
             .productSellingStatus(ProductSellingStatus.SELLING)
@@ -38,7 +38,7 @@ class CafeKioskApplicationTests {
             .build();
 
         Product product2 = Product.builder()
-            .productNumber(2)
+            .productNumber("002")
             .name("라떼")
             .price(4500)
             .productSellingStatus(ProductSellingStatus.HOLD)
@@ -50,7 +50,7 @@ class CafeKioskApplicationTests {
         productRepository.saveAll(products);
 
         // when
-        List<Product> findProducts = productRepository.findAllByProductSellingStatusIn(
+        List<Product> findProducts = productRepository.findAllBySellingStatusIn(
             List.of(ProductSellingStatus.SELLING, ProductSellingStatus.HOLD));
 
         // then
