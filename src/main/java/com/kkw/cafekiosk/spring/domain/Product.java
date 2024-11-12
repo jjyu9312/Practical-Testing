@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -26,4 +27,13 @@ public class Product {
     private ProductSellingStatus productSellingStatus;
 
     private ProductType productType;
+
+    @Builder
+    public Product(int productNumber, String name, int price, ProductSellingStatus productSellingStatus, ProductType productType) {
+        this.productNumber = productNumber;
+        this.name = name;
+        this.price = price;
+        this.productSellingStatus = productSellingStatus;
+        this.productType = productType;
+    }
 }
