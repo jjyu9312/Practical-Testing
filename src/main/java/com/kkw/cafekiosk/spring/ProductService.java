@@ -20,15 +20,15 @@ public class ProductService {
 
     public List<ProductsRes> findAllByProductSellingStatusIn() {
 
-        List<Product> products = productRepository.findAllByProductSellingStatusIn(
+        List<Product> products = productRepository.findAllBySellingStatusIn(
             List.of(SELLING, HOLD));
 
         return products
             .stream()
             .map(
             product -> new ProductsRes(product.getId(), product.getProductNumber(),
-                product.getName(), product.getPrice(), product.getProductSellingStatus(),
-                product.getProductType())
+                product.getName(), product.getPrice(), product.getSellingStatus(),
+                product.getType())
             )
             .collect(
                 Collectors.toList()

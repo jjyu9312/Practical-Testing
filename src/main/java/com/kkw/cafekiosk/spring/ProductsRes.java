@@ -11,7 +11,7 @@ public class ProductsRes {
 
     private Long id;
 
-    private int productNumber;
+    private String productNumber;
 
     private String name;
 
@@ -21,7 +21,7 @@ public class ProductsRes {
 
     private ProductType productType;
 
-    public ProductsRes(Long id, int productNumber, String name, int price,
+    public ProductsRes(Long id, String productNumber, String name, int price,
         ProductSellingStatus productSellingStatus, ProductType productType) {
         this.id = id;
         this.productNumber = productNumber;
