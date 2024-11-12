@@ -1,8 +1,10 @@
 package com.kkw.cafekiosk.spring;
 
+import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.HOLD;
+import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.SELLING;
+
 import com.kkw.cafekiosk.spring.domain.Product;
 import com.kkw.cafekiosk.spring.domain.ProductRepository;
-import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
@@ -16,16 +18,20 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<ProductsRes> findAllByProductSellingStatusIn(
-        List<ProductSellingStatus> productSellingStatusList) {
+    public List<ProductsRes> findAllByProductSellingStatusIn() {
 
         List<Product> products = productRepository.findAllByProductSellingStatusIn(
-            productSellingStatusList);
+            List.of(SELLING, HOLD));
 
-        return products.stream()
-            .map(product -> new ProductsRes(product.getId(), product.getProductNumber(),
+        return products
+            .stream()
+            .map(
+            product -> new ProductsRes(product.getId(), product.getProductNumber(),
                 product.getName(), product.getPrice(), product.getProductSellingStatus(),
-                product.getProductType()))
-            .collect(Collectors.toList());
+                product.getProductType())
+            )
+            .collect(
+                Collectors.toList()
+            );
     }
 }
