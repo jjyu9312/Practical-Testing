@@ -2,7 +2,11 @@ package com.kkw.cafekiosk.spring;
 
 import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
 import com.kkw.cafekiosk.spring.domain.ProductType;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ProductsRes {
 
     private Long id;
