@@ -2,6 +2,7 @@ spring:
   profiles:
     default: local
 
+  # H2 Database : http://localhost:8080/h2-console
   datasource:
     url: jdbc:h2:mem:~/cafeKioskApplication
     driver-class-name: org.h2.Driver
