@@ -1,4 +1,4 @@
-package com.kkw.cafekiosk.spring;
+package com.kkw.cafekiosk.spring.product;
 
 import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.HOLD;
 import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.SELLING;
@@ -7,16 +7,14 @@ import com.kkw.cafekiosk.spring.domain.Product;
 import com.kkw.cafekiosk.spring.domain.ProductRepository;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class ProductService {
 
     private final ProductRepository productRepository;
-
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
 
     public List<ProductsRes> findAllByProductSellingStatusIn() {
 

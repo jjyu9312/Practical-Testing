@@ -1,4 +1,4 @@
-package com.kkw.cafekiosk.spring;
+package com.kkw.cafekiosk.spring.product;
 
 import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
 import com.kkw.cafekiosk.spring.domain.ProductType;
