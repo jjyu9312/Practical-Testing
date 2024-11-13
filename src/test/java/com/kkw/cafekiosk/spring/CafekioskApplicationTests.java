@@ -1,5 +1,7 @@
 package com.kkw.cafekiosk.spring;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.kkw.cafekiosk.spring.domain.Product;
 import com.kkw.cafekiosk.spring.domain.ProductRepository;
 import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
@@ -11,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.assertj.core.api.Assertions.*;
 
 @ActiveProfiles("test")
 @SpringBootTest
@@ -54,7 +55,10 @@ class CafeKioskApplicationTests {
             List.of(ProductSellingStatus.SELLING, ProductSellingStatus.HOLD));
 
         // then
-        assertThat(findProducts.size()).isEqualTo(2);
+        assertThat(findProducts)
+            .isEqualTo(2)
+            .extracting("name")
+            .contains("아메리카노", "라떼")
+        ;
     }
-
 }
