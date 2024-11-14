@@ -2,10 +2,10 @@ package com.kkw.cafekiosk.spring;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.kkw.cafekiosk.spring.domain.Product;
-import com.kkw.cafekiosk.spring.domain.ProductRepository;
-import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
-import com.kkw.cafekiosk.spring.domain.ProductType;
+import com.kkw.cafekiosk.spring.domain.product.Product;
+import com.kkw.cafekiosk.spring.domain.product.ProductRepository;
+import com.kkw.cafekiosk.spring.domain.product.ProductSellingStatus;
+import com.kkw.cafekiosk.spring.domain.product.ProductType;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
