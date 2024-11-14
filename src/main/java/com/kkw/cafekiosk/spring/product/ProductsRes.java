@@ -1,7 +1,7 @@
 package com.kkw.cafekiosk.spring.product;
 
-import com.kkw.cafekiosk.spring.domain.ProductSellingStatus;
-import com.kkw.cafekiosk.spring.domain.ProductType;
+import com.kkw.cafekiosk.spring.domain.product.ProductSellingStatus;
+import com.kkw.cafekiosk.spring.domain.product.ProductType;
 import lombok.Getter;
 import lombok.Setter;
 

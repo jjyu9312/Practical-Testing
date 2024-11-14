@@ -1,10 +1,10 @@
 package com.kkw.cafekiosk.spring.product;
 
-import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.HOLD;
-import static com.kkw.cafekiosk.spring.domain.ProductSellingStatus.SELLING;
+import static com.kkw.cafekiosk.spring.domain.product.ProductSellingStatus.HOLD;
+import static com.kkw.cafekiosk.spring.domain.product.ProductSellingStatus.SELLING;
 
-import com.kkw.cafekiosk.spring.domain.Product;
-import com.kkw.cafekiosk.spring.domain.ProductRepository;
+import com.kkw.cafekiosk.spring.domain.product.Product;
+import com.kkw.cafekiosk.spring.domain.product.ProductRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
