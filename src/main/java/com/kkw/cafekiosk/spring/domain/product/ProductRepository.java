@@ -1,4 +1,4 @@
-package com.kkw.cafekiosk.spring.domain;
+package com.kkw.cafekiosk.spring.domain.product;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

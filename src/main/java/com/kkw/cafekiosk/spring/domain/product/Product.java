@@ -1,5 +1,6 @@
-package com.kkw.cafekiosk.spring.domain;
+package com.kkw.cafekiosk.spring.domain.product;
 
+import com.kkw.cafekiosk.spring.domain.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Product {
+public class Product extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
