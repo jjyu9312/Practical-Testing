@@ -42,12 +42,10 @@ public class Order extends BaseEntity {
     }
 
     public static Order create(List<Product> products, LocalDateTime registeredDateTime) {
-        return new Order(products, registeredDateTime);
+        return null;
     }
 
     private int calculateTotalPrice(List<Product> products) {
-        return products.stream()
-            .mapToInt(Product::getPrice)
-            .sum();
+        return 0;
     }
 }
