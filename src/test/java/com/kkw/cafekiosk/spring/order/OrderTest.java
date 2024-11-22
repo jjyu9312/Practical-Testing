@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class OrderTest {
 
     @Test
-    @DisplayName("주문을 생성 합니다.")
+    @DisplayName("주문을 생성합니다.")
     void test() {
 
         // given
